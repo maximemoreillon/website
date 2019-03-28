@@ -1,0 +1,295 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  /* Remove defautl margin */
+  margin: 0;
+
+  /* Flex to center and stretch on page */
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+
+  /* Be at least as high as the viewport (sticky footer)*/
+  min-height: 100vh;
+
+  /* background */
+  background-color: #dddddd;
+
+  /* text */
+  font-family: 'Proxima Nova Soft','Helvetica Neue', sans-serif;
+}
+
+.wrapper {
+
+  /* As wide as possible up to a certain limit, keeping a margin */
+  width: 100%;
+  max-width: 1200px;
+  margin: 15px;
+
+  /* Grid for inner components*/
+  display: grid;
+  grid-template-areas: 'header main';
+  grid-template-columns: 225px 1fr;
+  grid-template-rows: 1fr;
+
+  /* additional visuals */
+  background-color: white;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+
+
+header {
+  /* Contains logo and nav */
+
+  /* grid area name for layout */
+  grid-area: header;
+
+  /* layout of inner elements */
+  display: flex;
+  flex-direction: column; /* for large displays, show items in a column */
+  justify-content: flex-start; /* items aligned up */
+
+  /*additional visuals */
+  background-color: #222222;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+header .logo_wrapper {
+
+  /* flex for centering*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Keep some room from the border */
+  padding: 25px;
+}
+
+header .logo_wrapper img {
+  /* logo sizing */
+  width:125px;
+  height:125px;
+
+  /* Logo rotation */
+  animation: logo_rotation 60s linear infinite;
+
+  /* Transitions */
+  transition: 0.25s;
+}
+
+@keyframes logo_rotation {
+  /* Animation to rotate the Logo */
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+nav {
+  /* flex: layout in column */
+  display: flex;
+  flex-direction: column; /* links are stacked in a column */
+  justify-content: flex-start;
+}
+
+nav a {
+
+  /* flex for item itself */
+  flex-basis: 0;
+  flex-grow: 1;
+
+
+  /* flex: alignment of content*/
+  display: flex;
+  justify-content: center;
+  align-items: center; /* text on center of block when stretched */
+
+  /* Giving some height to the links */
+  padding: 30px;
+
+  /* Visuals */
+  text-decoration: none;
+  color: white;
+  font-size: 1.4em;
+
+  /* activity indicator on the side */
+  border-top: none;
+  border-bottom: none;
+  border-left: solid 15px #22222200;
+  border-right: solid 15px #22222200;
+
+  /* transitions */
+  transition: font-size 0.25s;
+
+
+}
+
+nav a:hover {
+  /* activity indicator on the side */
+  border-top: none;
+  border-bottom: none;
+  border-left: solid 15px #777777;
+  border-right: solid 15px #22222200;
+}
+
+nav .active {
+  /* activity indicator on the side */
+  border-top: none;
+  border-bottom: none;
+  border-left: solid 15px #ce0000;
+  border-right: solid 15px #22222200;
+}
+
+
+
+/* Main*/
+main {
+  grid-area: main;
+
+  /* fixing IE compatibility */
+  display: block;
+
+  /* spacing */
+  margin: 0px;
+  padding: 20px;
+
+  /* Text settings */
+  font-size: 18px;
+}
+
+main h1 {
+  margin: 0;
+  color: #ce0000;
+}
+
+main a {
+  text-decoration: none;
+  color: #ce0000;
+}
+
+main a:hover {
+  text-decoration: underline;
+  color: #ce0000;
+}
+
+main img {
+  /* ensure images don't grow wider than wrapper */
+  max-width: 100%;
+}
+
+main .video_wrapper {
+  position: relative;
+  overflow: hidden;
+  padding-top: 56.25%;
+}
+
+main .video_wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+main .social_media_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+main .fa {
+  /* Styling of social media icons */
+  font-size: 120%;
+  padding: 25px;
+  text-align: center;
+  text-decoration: none;
+  color: #ce0000;
+}
+
+
+/* RESPONSIVENESS */
+
+/* for medium sized devices: header on top */
+/* logo on the left, menu items on the right */
+@media only screen and (max-width: 1000px) {
+  .wrapper {
+    display: grid;
+    grid-template-areas:
+        'header'
+        'main';
+    grid-template-columns: 1fr ;
+    grid-template-rows: auto 1fr;
+  }
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+  }
+  header .logo_wrapper {
+    padding: 20px;
+  }
+  header .logo_wrapper img {
+    width: 75px;
+    height: 75px;
+  }
+  nav {
+    /* flex: elements in a row */
+    flex-direction: row;
+  }
+  nav a {
+    justify-content: center;
+    padding: 20px;
+
+    border-top: solid 10px #22222200;
+    border-bottom: solid 10px #22222200;
+    border-left: none;
+    border-right: none;
+  }
+  nav a:hover {
+    border-left: none;
+    border-right: none;
+    border-top: solid 10px #22222200;
+    border-bottom: solid 10px #777777;
+  }
+  nav .active {
+    border-left: none;
+    border-right: none;
+    border-bottom: solid 10px #ce0000;
+    border-top: solid 10px #22222200;
+  }
+}
+
+/* for small devices */
+/* horizontal bar at the top*/
+/* logo centered above menu items next to each other */
+@media only screen and (max-width: 600px) {
+  .wrapper{
+    margin: 0;
+    box-shadow: none;
+  }
+  header {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  header .logo_wrapper {
+    padding: 10px;
+  }
+  nav {
+    /* flex */
+    justify-content: center;
+  }
+  nav a {
+    font-size: 1em;
+    padding: 10px;
+  }
+  main {
+    padding: 20px;
+    /* Text settings */
+    font-size: 16px;
+  }
+}

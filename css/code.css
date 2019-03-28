@@ -1,0 +1,29 @@
+pre {
+    white-space: pre-wrap;
+}
+
+code {
+    padding: 10px;
+    display: block;
+    background-color: #444444;
+    color: white;
+    font-size: 14px;
+}
+
+samp{
+    display:block;
+    padding: 10px;
+    border: 2px solid #4444;
+}
+
+.tag_type {
+    color: #ff6666;
+}
+
+.tag_property {
+    color: #ffcc66;
+}
+
+.tag_property_value {
+    color: #66ff99;
+}

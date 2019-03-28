@@ -1,0 +1,72 @@
+/* The Modal (background) */
+.image_modal_wrapper {
+    
+    /* positioning */
+    position: fixed;
+    z-index: 10;
+    
+    /* Sizing */
+    width: 100%;
+    height: 100%;
+    
+    
+    /* flex for content centering */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Coloring */
+    background-color: #333333aa;
+    
+    /* Misc */
+    overflow: auto;
+    
+    /* Stuff that varies with JS */
+    /* visibility instead of display because of transitions */
+    /* This changes at once at the end of the transition */
+    visibility: hidden;
+    
+    /* Opacity of modal container background */
+    opacity: 0;
+    /* End of stuff that varies with JS */
+    
+    /* animations */
+    transition: 0.3s;
+}
+
+/* Modal Content (Image) */
+.image_modal_image {
+
+    /* Stuff that changes with JS */
+    /* Do not show content by default */
+    opacity: 0;
+    max-width: 10%;
+    max-height: 10%;
+    /* End of stuff that varies with JS */
+
+    
+    
+    /* animations */
+    transition: 0.3s linear;
+
+    /* Shadow */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+}

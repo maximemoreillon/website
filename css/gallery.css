@@ -1,0 +1,36 @@
+.gallery{
+
+  /* Flex to distribute images evenly */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+
+}
+
+.gallery div{
+
+  margin: 5px;
+
+  /* sizing */
+  /* should probably not be in px */
+  width: 300px;
+  height: 300px;
+
+  /* flex for centering of content */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.gallery img {
+
+  /* sizing */
+  max-width: 100%;
+  max-height: 100%;
+
+  /* misc visuals */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+
+}
