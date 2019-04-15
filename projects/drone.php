@@ -1,6 +1,6 @@
 <?php include $_SERVER["DOCUMENT_ROOT"].'/includes/pre_main.php'; ?>
 
-<h1>Drone</h1>
+<h1>Quadcopter</h1>
 <h2>Description</h2>
 <p>
 	Homemade quadcopter. This was an interative project which went through two versions.

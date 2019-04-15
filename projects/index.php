@@ -35,7 +35,7 @@
     <li><a href="/projects/hud.php">HUD goggles</a></li>
     <li><a href="/projects/briefcase.php">Fingerprint scanner briefcase</a></li>
     <li><a href="/projects/gps_tracker.php">GPS tracker</a></li>
-    <li><a href="/projects/drone.php">Homemade quadcopter</a></li>
+    <li><a href="/projects/drone.php">Quadcopter</a></li>
     <li><a href="/projects/dog.php">Barking alarm</a></li>
     <li><a href="/projects/motion.php">Wireless motion sensor</a></li>
     <!--<li><a href="/projects/ammo_counter.php">Ammunition counter</a></li>-->

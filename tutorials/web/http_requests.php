@@ -33,7 +33,7 @@
 
 <pre><code><?php tag('form action="target_URL" method="POST"'); ?> 
     <?php tag('input type="text" name="username" placeholder="Username"'); ?><?php tag("br"); ?> 
-    <?php tag('input type="text" name="password" placeholder="Password"'); ?><?php tag("br"); ?> 
+    <?php tag('input type="password" name="password" placeholder="Password"'); ?><?php tag("br"); ?> 
     <?php tag('input type="submit" value="Submit"'); ?> 
 <?php tag("/form"); ?></code></pre>
 
@@ -44,7 +44,7 @@
 <div>
     <form action="target_URL" method="POST"> 
         <input type="text" name="username" placeholder="Username"><br> 
-        <input type="text" name="password" placeholder="Password"><br> 
+        <input type="password" name="password" placeholder="Password"><br> 
         <input type="submit" value="Submit"> 
     </form>
 </div>

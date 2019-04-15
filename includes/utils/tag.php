@@ -45,6 +45,20 @@ function tag($tag_content){
 }
 
 
+
+function php_open(){
+    echo "<span class='php_tag'>";
+    echo "&lt;?php";
+    echo "</span>";
+}
+
+function php_close(){
+    echo "<span class='php_tag'>";
+    echo "?&gt;";
+    echo "</span>";
+}
+
+// Legacy
 function open_tag($tag_content){
     
     $pieces = explode(" ", $tag_content);
